@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Fermyon Engineering <engineering@fermyon.com>"]
+name = "WorldCupSlackBot"
+trigger = { type = "http", base = "/" }
+version = "1.0.0"
+
+[[component]]
+id = "botapi"
+source = "target/wc-bot.wasm"
+allowed_http_hosts = ["https://worldcupjson.net"]
+[component.trigger]
+route = "/"
+[component.build]
+command = "npm run build"
